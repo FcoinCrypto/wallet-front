@@ -1,11 +1,26 @@
 import { useState } from 'react'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import reactLogo from './assets/react.svg'
-import './App.css'
+import './assets/App.css'
+import Wallet from './components/Wallet'
+import Transactions from './components/Transactions'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
+    <BrowserRouter>
+      <main>
+        <Routes>
+          <Route path="/" element={<Wallet />} />
+          <Route path="transactions" element={<Transactions />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
+  )
+}
+
+export default App
+
+/*
     <div className="App">
       <div>
         <a href="https://vitejs.dev" target="_blank">
@@ -28,7 +43,4 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </div>
-  )
-}
-
-export default App
+*/
