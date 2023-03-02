@@ -1,3 +1,5 @@
+Service is deployed on Render with base url - hhttps://wallet-app-vmdx.onrender.com/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
