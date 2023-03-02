@@ -24,7 +24,6 @@ function App() {
     const initialBalance = event.target.initialBalance.value
 
     const newWallet = await WalletAPI.setup(username, initialBalance)
-    console.log('newwallet', newWallet)
     let error = document.querySelector('#error-wallet')
 
     if (newWallet && newWallet.success === false) {

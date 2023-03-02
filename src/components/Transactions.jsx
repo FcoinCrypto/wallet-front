@@ -35,7 +35,6 @@ const Styles = styled.div`
 
 const Transactions = (props) => {
   const [transactions, setTransactions] = useState([])
-  // console.log('transactions props', props)
 
   useEffect(() => {
     if (props.wallet !== null) {
@@ -45,13 +44,10 @@ const Transactions = (props) => {
           props.wallet.id,
           0
         )
-        console.log('transactions list api result', transactionsList)
         setTransactions(transactionsList)
       })()
     }
-  }, [])
-
-  console.log('transactions list state', transactions)
+  }, [props.wallet])
 
   const columns = useMemo(
     () => [
