@@ -4,6 +4,7 @@ import { WalletAPI } from '../api/Wallet'
 import TransactionsTable from './TransactionsTable'
 import ColumnFilter from './ColumnFilter'
 import styled from 'styled-components'
+import { CSVLink } from 'react-csv'
 
 const Styles = styled.div`
   padding: 1rem;
@@ -33,6 +34,29 @@ const Styles = styled.div`
     }
   }
 `
+
+const headers = [
+  {
+    label: 'Date',
+    key: 'date',
+  },
+  {
+    label: 'Description',
+    key: 'description',
+  },
+  {
+    label: 'Amount',
+    key: 'amount',
+  },
+  {
+    label: 'Type',
+    key: 'type',
+  },
+  {
+    label: 'Balance',
+    key: 'balance',
+  },
+]
 
 const Transactions = (props) => {
   const [transactions, setTransactions] = useState([])
@@ -88,6 +112,9 @@ const Transactions = (props) => {
         <Styles>
           <TransactionsTable columns={columns} data={transactions} />
         </Styles>
+        <CSVLink data={transactions} headers={headers}>
+          Download CSV
+        </CSVLink>
       </div>
     )
   }
