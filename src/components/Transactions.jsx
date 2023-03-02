@@ -2,6 +2,7 @@
 import React, { useMemo, useState, useEffect } from 'react'
 import { WalletAPI } from '../api/Wallet'
 import TransactionsTable from './TransactionsTable'
+import ColumnFilter from './ColumnFilter'
 import styled from 'styled-components'
 
 const Styles = styled.div`
@@ -54,22 +55,27 @@ const Transactions = (props) => {
       {
         Header: 'Date',
         accessor: 'date',
+        Filter: ColumnFilter,
       },
       {
         Header: 'Description',
         accessor: 'description',
+        Filter: ColumnFilter,
       },
       {
         Header: 'Amount',
         accessor: 'amount',
+        Filter: ColumnFilter,
       },
       {
         Header: 'Type',
         accessor: 'type',
+        Filter: ColumnFilter,
       },
       {
         Header: 'Balance',
         accessor: 'balance',
+        Filter: ColumnFilter,
       },
     ],
     []

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-key */
 import React from 'react'
-import { useTable, useSortBy } from 'react-table'
+import { useTable, useSortBy, useFilters } from 'react-table'
 
 const TransactionsTable = ({ columns, data }) => {
   // Use the useTable Hook to send the columns and data to build the table
@@ -16,6 +16,7 @@ const TransactionsTable = ({ columns, data }) => {
       columns,
       data,
     },
+    useFilters,
     useSortBy
   )
 
@@ -40,9 +41,12 @@ const TransactionsTable = ({ columns, data }) => {
             >
               {column.render('Header')}
               {/* Add a sort direction indicator */}
-              <span>
-                {column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}
-              </span>
+              <div>
+                <span>
+                  {column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}
+                </span>
+              </div>
+              <div>{column.canFilter ? column.render('Filter') : null}</div>
             </th>
           ))}
         </tr>
