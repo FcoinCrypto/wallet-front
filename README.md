@@ -1,4 +1,4 @@
-Service is deployed on Render with base url - hhttps://wallet-app-vmdx.onrender.com/
+Service is deployed on Render with base url - https://wallet-app-vmdx.onrender.com/
 
 # Getting Started with Create React App
 
